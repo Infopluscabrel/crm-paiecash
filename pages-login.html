@@ -29,6 +29,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Javascript function -->
+  <script src ="fonctions.js"></script>
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.1.0
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -63,7 +66,7 @@
                     <p class="text-center small">Entrez votre login de distribution</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" novalidate id="userLogin">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">login</label>
@@ -76,7 +79,7 @@
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Mot de passe</label>
-                      <input type="password" name="passwword" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
                     </div>
 
@@ -88,7 +91,7 @@
                     </div>
                     <div class="col-12">
                       <a href="index.html">
-                        <button class="btn btn-primary w-100" type="submit">Se connecter</button>
+                        <button class="btn btn-primary w-100" type="submit" id="">Se connecter</button>
                       </a>
                      
                     </div>
@@ -129,6 +132,7 @@
   <script src="assets/vendor/chart.js/chart.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/js/jquery.livequery.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

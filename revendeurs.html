@@ -205,7 +205,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default-avatar.png" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -431,7 +431,7 @@
             <div class="card-body">
               <h5 class="card-title">Liste des Revendeurs  
                
-                <button type="" class="btn btn-primary" id="nouveauvendeur"  data-toggle="modal" data-target="#ajoutvente">Ajouter Vente</button>
+                <button type="" class="btn btn-primary" id="nouveauRevendeur"  data-toggle="modal" data-target="#ajoutRevendeur">Ajouter Revendeur</button>
             
               </h5>
               <p></p>
@@ -440,27 +440,26 @@
               <div class="table-responsive">
                 <table class="table">
                   <table class="table datatable">
-                <thead>
+                <thead class="table-head">
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Vendeur</th>
-                    <th scope="col">Suffixe login</th>
+                    <th scope="col w-auto">#</th>
+                    <th scope="col w-auto">Vendeur</th>
+                    <th scope="col w-auto">Client</th>
                    
-                    <th scope="col">Client</th>
+                    <th scope="col">Code</th>
                     <th scope="col">Offre</th>
-                      <th scope="col">Détails Offre </th>
+                      <th scope="col">Détails</th>
                     <th scope="col">Engagement</th>
-                    <th scope="col">Affaire</th>
-                    <th scope="col">Date de création</th>
-                    <th scope="col">Etat de signature</th>
-                    <th scope="col">Date de signature</th>
-                    <th scope="col">Upload Identité</th>
-                    <th scope="col">Upload Patente</th>
-                    <th scope="col">Upload NUI</th>
+                    <th scope="col">Date création</th>
+                    <th scope="col">Etat signature</th>
+                    <th scope="col">Date signature</th>
+                    <th scope="col">Identité</th>
+                    <th scope="col">Patente</th>
+                    <th scope="col">NUI</th>
                     <th scope="col">Etat validation</th>
-                    <th scope="col">Date de validation</th>
-                    <th scope="col">État du stock</th>
-                    <th scope="col">Date d'expedition</th>
+                    <th scope="col">Date validation</th>
+                    <th scope="col">État stock</th>
+                    <th scope="col">Date expedition</th>
                     <th scope="col">Adresse</th>
                       <th scope="col">Options</th>
                     
@@ -486,12 +485,11 @@
                     <td>2016-05-25</td>
                     <td>2016-05-25</td>
                     <td>2016-05-25</td>
-                    <td>2016-05-25</td>
                       <td>
                           <ul class="list-inline m-0">
                           
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutvente" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutRevendeur" data-placement="top" title="Edit"
                               style="margin-bottom: 10px; vertical-align: baseline;"
                               ><i
                                   class="bi bi-pencil-square"></i>Editer</button>
@@ -527,12 +525,11 @@
                         <td>2016-05-25</td>
                         <td>2016-05-25</td>
                         <td>2016-05-25</td>
-                        <td>2016-05-25</td>
                         <td>
                           <ul class="list-inline m-0">
                       
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutvente" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutRevendeur" data-placement="top" title="Edit"
                                 style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
                             </li>
                             <li class="list-inline-item">
@@ -563,7 +560,7 @@
 
 
     <!-- modal ajout joueur -->
-<div class="modal fade show" id="ajoutventelast" tabindex="-1" role="dialog" aria-labelledby="ajoutvente"
+<div class="modal fade show" id="ajoutRevendeurlast" tabindex="-1" role="dialog" aria-labelledby="ajoutRevendeur"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -574,7 +571,7 @@
         </button>
       </div>
             <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Ajouter une Vente</h5>
+                <h5 class="card-title text-center pb-0 fs-4">Ajouter un Revendeur</h5>
           
               </div>
           
@@ -665,7 +662,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="ajoutvente" tabindex="-1" role="dialog"
+<div class="modal fade" id="ajoutRevendeur" tabindex="-1" role="dialog"
   aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -682,15 +679,20 @@
         <div class="card-body">
     
           <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Ajouter une Vente</h5>
+            <h5 class="card-title text-center pb-0 fs-4">Ajouter un Revendeur</h5>
     
           </div>
     
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-12">
-              <label for="yourName" class="form-label">Nom du vendeur </label>
-              <input type="text" name="name" class="form-control" id="yourName" required>
-              <div class="invalid-feedback">Entrez le nom du vendeur !</div>
+              <label for="yourClient" class="form-label">Vendeur</label>
+              <input type="text" name="client" class="form-control" id="vendeur">
+              <div class="invalid-feedback">Nom du vendeur obligatoire!</div>
+            </div>
+            <div class="col-12">
+              <label for="yourClient" class="form-label">Nom Revendeur</label>
+              <input type="text" name="client" class="form-control" id="yourClient" required>
+              <div class="invalid-feedback">Nom du client obligatoire!</div>
             </div>
             <div class="col-12">
               <label for="yourSuffixe" class="form-label">Suffixe Login</label>
@@ -700,13 +702,7 @@
                 <div class="invalid-feedback">Please choose a usersuffixe.</div>
               </div>
             </div>
-              <div class="col-12">
-                <label for="yourClient" class="form-label">Client</label>
-                <input type="text" name="client" class="form-control" id="yourClient" required>
-                <div class="invalid-feedback">Nom du client obligatoire!</div>
-              </div>
-              
-              <div class="col-12">
+            <div class="col-12">
                 <label for="yourOffre" class="form-label">Offre</label>
                 <input type="text" name="offre" class="form-control" id="yourOffre" required>
                 <div class="invalid-feedback">Offre obligatoire!</div>
@@ -720,11 +716,6 @@
                 <label for="yourEngagement" class="form-label">Engagement</label>
                 <input type="text" name="engagement" class="form-control" id="yourEngagement" required>
                 <div class="invalid-feedback">Engagements obligatoire!</div>
-              </div>
-              <div class="col-12">
-                <label for="yourAffaire" class="form-label">Affaire</label>
-                <input type="text" name="affaire" class="form-control" id="yourAffaire" required>
-                <div class="invalid-feedback">Affaire obligatoire!</div>
               </div>
               <div class="col-12">
                 <label for="yourDate" class="form-label">Date Création</label>
@@ -742,8 +733,8 @@
                 <div class="invalid-feedback">Date de signature obligatoire!</div>
               </div>      
               <div class="col-12">
-                <label for="yourImage" class="form-label">Insérer Photo</label>
-                <input type="file" name="image" class="form-control" id="yourImage" required>
+                <label for="yourImage" class="form-label">Insérer CNI</label>
+                <input type="file" name="image" class="form-control" id="yourImage" >
                 <div class="invalid-feedback">identité obligatoire!</div>
               </div>
               <div class="col-12">
@@ -782,7 +773,7 @@
                 <div class="invalid-feedback">Adresse obligatoire!</div>
               </div>           
             <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Ajouter Vente</button>
+              <button class="btn btn-primary w-100" type="submit">Ajouter Revendeur</button>
             </div>
           </form>
     
@@ -797,7 +788,13 @@
     </div>
   </div>
 </div>
-  </footer><!-- End Footer -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
+  </div>
+  
+</footer><!-- End Footer -->
+
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -829,7 +826,7 @@
   <!-- jquery  JS Files -->
 
     
-    
+    <script src="fonctions.js"></script>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
       <script src="assets/vendor/jquery/jquery.livequery.js"></script>
      

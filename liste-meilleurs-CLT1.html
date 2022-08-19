@@ -205,7 +205,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default-avatar.png " alt="" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -326,19 +326,19 @@
   
           <li>
             <a href="stocks-list.html">
-              <i class="bi bi-circle"></i><span>Stocks disponibles </span>
+              <i class="bi bi-circle"></i><span>Articles</span>
             </a>
           </li>
           <li>
             <a href="entree-stock.html">
-              <i class="bi bi-circle"></i><span>Entrée</span>
+              <i class="bi bi-circle"></i><span>Stocks</span>
             </a>
           </li>
-          <li>
+          <!--<li>
             <a href="sortie-stock.html">
-              <i class="bi bi-circle"></i><span>Sortie</span>
+              <i class="bi bi-circle"></i><span>Commandes</span>
             </a>
-          </li><!-- End Tables Nav -->
+          </li> End Tables Nav -->
   
   
         </ul>
@@ -413,12 +413,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Gestion des Stocks</h1>
+      <h1>Liste Meilleurs Clients</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Gestion des stocks</li>
-          <li class="breadcrumb-item active">Entrée</li>
+          <li class="breadcrumb-item">Clients niveau 1</li>
+          <li class="breadcrumb-item active">Liste meilleurs Clients</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -429,10 +429,8 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Liste des Entrées 
+              <h5 class="card-title">Liste des meilleurs clients
                
-                <button type="" class="btn btn-primary" id="nouvellentree"  data-toggle="modal" data-target="#ajoutentree">Ajouter entrée</button>
-            
               </h5>
               <p></p>
 
@@ -442,21 +440,21 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
-                    <th scope="col">Quantite</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Produits commandés</th>
+                    <th scope="col">Chiffre d'affaire</th>
                    </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Maillots</td>
+                    <td>Maurice</td>
                     <td>100</td>
-                    <td>28- 07-2022</td>
+                    <td>500 000</td>
                      <td>
                           <ul class="list-inline m-0">
                           
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutentree" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutstock" data-placement="top" title="Edit"
                               style="margin-bottom: 10px; vertical-align: baseline;"
                               ><i
                                   class="bi bi-pencil-square"></i>Editer</button>
@@ -475,15 +473,15 @@
                  
                    <tr>
                         <th scope="row">2</th>
-                        <td>Godas</td>
-                        <td>100</td>
-                        <td>30-07-2022</td>
+                        <td>GodStone</td>
+                        <td>90</td>
+                        <td>300 000</td>
                         
                         <td>
                           <ul class="list-inline m-0">
                       
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutentree" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutstock" data-placement="top" title="Edit"
                                 style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
                             </li>
                             <li class="list-inline-item">
@@ -512,7 +510,7 @@
 
 
     <!-- modal ajout stock-->
-<div class="modal fade show" id="ajoutentreelast" tabindex="-1" role="dialog" aria-labelledby="ajoutentree"
+<div class="modal fade show" id="ajoutstocklast" tabindex="-1" role="dialog" aria-labelledby="Ajoutstock"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -523,7 +521,7 @@
         </button>
       </div>
             <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Modifier une Entrée</h5>
+                <h5 class="card-title text-center pb-0 fs-4">Modifier un Stock</h5>
           
               </div>
           
@@ -597,7 +595,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="ajoutentree" tabindex="-1" role="dialog"
+<div class="modal fade" id="ajoutstock" tabindex="-1" role="dialog"
   aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -614,13 +612,13 @@
         <div class="card-body">
     
           <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Faire une Entrée</h5>
+            <h5 class="card-title text-center pb-0 fs-4">Ajouter un stock</h5>
     
           </div>
     
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-12">
-              <label for="yourName" class="form-label">Nom</label>
+              <label for="yourName" class="form-label">Nom du stock </label>
               <input type="text" name="name" class="form-control" id="yourName" required>
               <div class="invalid-feedback">Entrez le nom du stock !</div>
             </div>
@@ -638,7 +636,7 @@
             </div>
     
             <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Ajouter au Stock </button>
+              <button class="btn btn-primary w-100" type="submit">Ajouter le stock </button>
             </div>
             
           </form>

@@ -205,7 +205,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default-avatar.png " alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -325,20 +325,20 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
   
           <li>
+            <a href="ajout-article.html">
+              <i class="bi bi-circle"></i><span>Articles </span>
+            </a>
+          </li>
+          <li>
             <a href="stocks-list.html">
-              <i class="bi bi-circle"></i><span>Stocks disponibles </span>
+              <i class="bi bi-circle"></i><span>Stocks</span>
             </a>
           </li>
-          <li>
-            <a href="entree-stock.html">
-              <i class="bi bi-circle"></i><span>Entrée</span>
+         <!-- <li>
+            <a href="commandes.html">
+              <i class="bi bi-circle"></i><span>Commandes</span>
             </a>
-          </li>
-          <li>
-            <a href="sortie-stock.html">
-              <i class="bi bi-circle"></i><span>Sortie</span>
-            </a>
-          </li><!-- End Tables Nav -->
+          </li>End Tables Nav -->
   
   
         </ul>
@@ -431,7 +431,8 @@
             <div class="card-body">
               <h5 class="card-title">Liste des stocks 
                
-                <button type="" class="btn btn-primary" id="nouveaustock"  data-toggle="modal" data-target="#ajoutstock">Ajouter stock</button>
+                <button type="" class="btn btn-primary" id="entreestock"  data-toggle="modal" data-target="#entreeStock">Entrée stock</button>
+                <button type="" class="btn btn-primary" id="sortiestock"  data-toggle="modal" data-target="#sortieStock">Sortie stock</button>
             
               </h5>
               <p></p>
@@ -442,21 +443,21 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
-                    <th scope="col">Quantite</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix unitaire</th>
                    </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Maillots</td>
+                    <td>Top Pamplemousse</td>
                     <td>100</td>
-                    <td>28- 07-2022</td>
+                    <td>500</td>
                      <td>
                           <ul class="list-inline m-0">
                           
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutstock" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#entreeStock" data-placement="top" title="Edit"
                               style="margin-bottom: 10px; vertical-align: baseline;"
                               ><i
                                   class="bi bi-pencil-square"></i>Editer</button>
@@ -475,15 +476,15 @@
                  
                    <tr>
                         <th scope="row">2</th>
-                        <td>Godas</td>
+                        <td>Castel Beer</td>
                         <td>100</td>
-                        <td>30-07-2022</td>
+                        <td>650</td>
                         
                         <td>
                           <ul class="list-inline m-0">
                       
                             <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutstock" data-placement="top" title="Edit"
+                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#entreeStock" data-placement="top" title="Edit"
                                 style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
                             </li>
                             <li class="list-inline-item">
@@ -512,7 +513,7 @@
 
 
     <!-- modal ajout stock-->
-<div class="modal fade show" id="ajoutstocklast" tabindex="-1" role="dialog" aria-labelledby="Ajoutstock"
+<div class="modal fade show" id="entreeStocklast" tabindex="-1" role="dialog" aria-labelledby="entreeStock"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -542,7 +543,7 @@
           
                          
                 <div class="col-12">
-                  <label for="yourDate" class="form-label">Date d'enregistrement du stock</label>
+                  <label for="yourDate" class="form-label"> Prix </label>
                   <input type="date" name="Date" class="form-control" id="yourDate" required>
                   <div class="invalid-feedback">date de naissance du joueur!</div>
                 </div>
@@ -574,11 +575,11 @@
           </div>
           <div class="modal-body">
               <div>
-                Nom du stock : Maillots
+                Nom du stock : Top Pamplemousse
 
                 Quantite :  100
-
-                Date : 12-07-2022 
+ 
+                Prix Unitaire : 500 
 
 
               </div>
@@ -597,7 +598,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="ajoutstock" tabindex="-1" role="dialog"
+<div class="modal fade" id="entreeStock" tabindex="-1" role="dialog"
   aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -614,15 +615,49 @@
         <div class="card-body">
     
           <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Ajouter un stock</h5>
+            <h5 class="card-title text-center pb-0 fs-4">Faire une entrée en stock</h5>
     
           </div>
     
           <form class="row g-3 needs-validation" novalidate>
-            <div class="col-12">
-              <label for="yourName" class="form-label">Nom du stock </label>
-              <input type="text" name="name" class="form-control" id="yourName" required>
-              <div class="invalid-feedback">Entrez le nom du stock !</div>
+            <div class="select">
+              <select name="article_id" class="form-control">
+                  <option value="0">Sélectionner le nom de l'article</option>
+                  <option value="">"33" Export</option>
+                  <option value="">Beaufort Lager</option>
+                  <option value="">Beaufort Light</option>
+                  <option value="">Castel Beer</option>
+                  <option value="">Manyan</option>
+                  <option value="">Mützig</option>
+                  <option value="">Castel Milk</option>
+                  <option value="">Stout</option>
+                  <option value="">Pelforth</option>
+                  <option value="">Heineken</option>
+                  <option value="">Isenbeck</option>
+                  <option value="">Chill</option>
+                  <option value="">Malta Tonic</option>
+                  <option value="">XXL</option>
+                  <option value="">XXL Love</option>
+                  <option value="">Top pamplemousse</option>
+                  <option value="">Top orange </option>
+                  <option value="">Top ananas</option>
+                  <option value="">Top grenadine</option>
+                  <option value="">Top cola</option>
+                  <option value="">Top Bitter Lemon</option>
+                  <option value="">World Cola</option>
+                  <option value="">D'jino</option>
+                  <option value="">Shweppes</option>
+                  <option value="">Malt up</option>
+                  <option value="">Vimto</option>
+                  <option value="">Orangina</option>
+                  <option value="">Aquabelle</option>
+                  <option value="">Eau vital</option>
+                  <option value="">Source tangui</option>
+                  <option value="">Lemon</option>
+                  <option value="">Booster Cola</option>
+                  <option value="">Booster Ginger</option>
+                  <option value="">Booster Gin</option>
+              </select>    
             </div>
     
             <div class="col-12">
@@ -632,13 +667,13 @@
             </div>
     
             <div class="col-12">
-              <label for="yourDate" class="form-label">Date</label>
-              <input type="date" name="date" class="form-control" id="yourDate" required>
-              <div class="invalid-feedback">Please enter the Date!</div>
+              <label for="yourPrix" class="form-label">Prix</label>
+              <input type="number" name="prix" class="form-control" id="yourPrix" required>
+              <div class="invalid-feedback">Please enter the price!</div>
             </div>
     
             <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Ajouter le stock </button>
+              <button class="btn btn-primary w-100" type="submit">Ajouter </button>
             </div>
             
           </form>
@@ -654,6 +689,103 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="sortieStock" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <div class="modal-body">
+      <div class="card mb-3">
+    
+        <div class="card-body">
+    
+          <div class="pt-4 pb-2">
+            <h5 class="card-title text-center pb-0 fs-4">Faire une sortie en stock</h5>
+    
+          </div>
+    
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="select">
+              <select name="article_id" class="form-control">
+                  <option value="0">Sélectionner le nom de l'article</option>
+                  <option value="">"33" Export</option>
+                  <option value="">Beaufort Lager</option>
+                  <option value="">Beaufort Light</option>
+                  <option value="">Castel Beer</option>
+                  <option value="">Manyan</option>
+                  <option value="">Mützig</option>
+                  <option value="">Castel Milk</option>
+                  <option value="">Stout</option>
+                  <option value="">Pelforth</option>
+                  <option value="">Heineken</option>
+                  <option value="">Isenbeck</option>
+                  <option value="">Chill</option>
+                  <option value="">Malta Tonic</option>
+                  <option value="">XXL</option>
+                  <option value="">XXL Love</option>
+                  <option value="">Top pamplemousse</option>
+                  <option value="">Top orange </option>
+                  <option value="">Top ananas</option>
+                  <option value="">Top grenadine</option>
+                  <option value="">Top cola</option>
+                  <option value="">Top Bitter Lemon</option>
+                  <option value="">World Cola</option>
+                  <option value="">D'jino</option>
+                  <option value="">Shweppes</option>
+                  <option value="">Malt up</option>
+                  <option value="">Vimto</option>
+                  <option value="">Orangina</option>
+                  <option value="">Aquabelle</option>
+                  <option value="">Eau vital</option>
+                  <option value="">Source tangui</option>
+                  <option value="">Lemon</option>
+                  <option value="">Booster Cola</option>
+                  <option value="">Booster Ginger</option>
+                  <option value="">Booster Gin</option>
+              </select>    
+            </div>
+    
+            <div class="col-12">
+              <label for="yourEmail" class="form-label">Quantité</label>
+              <input type="number" name="email" class="form-control" id="yourEmail" required>
+              <div class="invalid-feedback">Please enter a valid Quantity it is a number!</div>
+            </div>
+    
+            <div class="col-12">
+              <label for="yourPrix" class="form-label">Prix</label>
+              <input type="number" name="date" class="form-control" id="yourPrix" required>
+              <div class="invalid-feedback">Please enter the price!</div>
+            </div>
+    
+            <div class="col-12">
+              <button class="btn btn-primary w-100" type="submit">Ajouter </button>
+            </div>
+            
+          </form>
+    
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
+    </div>
+    
   </footer><!-- End Footer -->
 
 
