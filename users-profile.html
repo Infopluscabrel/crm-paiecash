@@ -29,6 +29,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+
+  <script src="assets/js/qrcode.js"></script>
+
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.1.0
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -691,8 +695,23 @@
                 <div class="tab-pane fade pt-3" id="QR-Code"></div>
                 <!--QR Code image-->
                   <form>
+                   <p class="text-center"> Voici votre Qrcode</p> 
+                    <div class="qrcode text-center" id="1qrcode" >
+<div id="qrcode"></div>
+<script type="text/javascript">
+  //new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
 
-                    
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "http://jindo.dev.naver.com/collie",
+      width: 128,
+      height: 128,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+</script>
+                    </div>
                   </form><!-- End QR-Code -->
                 </div>
 

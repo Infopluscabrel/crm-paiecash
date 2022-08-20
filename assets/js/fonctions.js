@@ -52,7 +52,7 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     for (var pair of formData.entries()) {
         console.log(pair[0]+ ', ' + pair[1]); 
     }
-    $.ajax({
+  /*  $.ajax({
         url: "http://localhost:5000/user/new",
         data: formData,
         processData: false,
@@ -61,9 +61,20 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
         success: function(data){
             alert(data);
         }
-    });
+    });*/
+    var data  = {email: "test@gmail.com", telephone: "6555"};
+  
+  $.post("http://localhost:5000/user/new", data, function(puerto){
+
+   console.log(puerto) ;
+  }, 'json');
+
+  return false;
 });
 
+
+
+ 
 //fonction pour recupérer la liste des revendeurs.
 // api url
 const api_url =
