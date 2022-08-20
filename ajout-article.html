@@ -437,69 +437,20 @@
               <p></p>
 
               <!-- Table with stripped rows -->
-              <table class="table datatable">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Quantite</th>
-                    <th scope="col">Date</th>
-                   </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Malta</td>
-                    <td>100</td>
-                    <td>20-08-2022</td>
-                     <td>
-                          <ul class="list-inline m-0">
-                          
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutArticle" data-placement="top" title="Edit"
-                              style="margin-bottom: 10px; vertical-align: baseline;"
-                              ><i
-                                  class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                  class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                          <li class="list-inline-item">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#plusinfo" >Voire plus</button>
-                          </li>
-                          </ul>
-
-                      </td>
-                  </tr>
-                 
-                   <tr>
-                        <th scope="row">2</th>
-                        <td>Kadji</td>
-                        <td>50</td>
-                        <td>650</td>
-                        
-                        <td>
-                          <ul class="list-inline m-0">
-                      
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutArticle" data-placement="top" title="Edit"
-                                style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top"
-                                title="Delete"><i class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                            <li class="list-inline-item" data-toggle="modal" data-target="#plusinfo"  >
-                              <button type="button" class="btn btn-warning btn-sm">Voire plus</button>
-                            </li>
-                          </ul>
-                      
-                        </td>
-                      </tr>
-
-                 
+              <table class="table">
+                <table class="table datatable" id="list-article">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nom</th>
+                      <th scope="col">Quantite</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                <tbody>                               
+                   
                 </tbody>
+                </table>
               </table>
               <!-- End Table with stripped rows -->
 
@@ -640,7 +591,7 @@
               <input type="number" name="prix" class="form-control" id="prix" required>
               <div class="invalid-feedback">Entrez le prix unitaire du produit!</div>
             </div>
-    
+            
             <div class="col-12">
               <button class="btn btn-primary w-100" type="submit">Ajouter</button>
             </div>

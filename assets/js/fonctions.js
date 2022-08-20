@@ -1,6 +1,101 @@
 const path = "http://localhost:5000";
 
 //fonction pour enregistrer un article
+$('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ; 
+    var nom = document.getElementById("nom").value;
+    var quantite = document.getElementById("quantite").value;
+    var prix= document.getElementById("prix").value;
+    var date = document.getElementById("date").value;
+    var formData = new FormData();
+    formData.append('nom', nom);
+    formData.append('prix', prix);
+    formData.append('quantite', quantite);
+    formData.append('CREATED_AT', date);
+    formData.append('proprietaire', "1");
+    
+  
+ var data  = {nom: nom, prix: prix, quantite: quantite, CREATED_AT: date, proprietaire:"1"};
+  console.log(data);
+
+  $.post("http://localhost:5000/article/new", data, function(puerto){
+
+   console.log(puerto) ;
+  }, 'json');
+
+  return false;
+
+});
+
+//fonction pour lister les article
+// api url
+const api_url =
+	"http://localhost:5000/article/all";
+
+// Defining async function
+async function getapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		hideloader();
+	}
+	show(data);
+}
+// Calling that async function
+getapi(api_url);
+
+// Function to hide the loader
+function hideloader() {
+	
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+    console.log(data);
+
+    
+	let tab =
+		`<tr>
+        <th>#</th>
+		<th>Nom</th>
+        <th>Quantite</th>
+        <th>Date</th>
+        <th>Options</th>
+		</tr>`;
+	
+	// Loop to access all rows
+	 for (let r of data.data) {
+		tab += `<tr>
+    <td>${r.ID_PRODUIT} </td>      
+	<td>${r.NOM_PRODUIT} </td>
+	<td>${r.QUANTITE}</td>
+	<td>${r.CREATED_AT} </td>
+       
+    <td><ul class="list-inline m-0">
+                      
+    <li class="list-inline-item">
+      <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutRevendeur" data-placement="top" title="Edit"
+        style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
+    </li>
+    <li class="list-inline-item">
+      <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top"
+        title="Delete"><i class="bi bi-trash"></i>Supprimer</button>
+    </li>
+    <li class="list-inline-item" data-toggle="modal" data-target="#plusinfo"  >
+      <button type="button" class="btn btn-warning btn-sm">Voire plus</button>
+    </li>
+  </ul></td>  
+    </tr>`;
+	}
+  
+	// Setting innerHTML as tab variable
+	document.getElementById("list-article").innerHTML = tab;
+}
+
+
 
 // fonction pour enregister un revendeur
 $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
@@ -76,10 +171,10 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
 
     var data  = {email: "test@gmail.com", telephone: "6555"};
   
- var data  = {parrain: "1", id_role: "1", nom_user: client, email: "cab@gmail.com", login: "suffixe" , telephone: "phone", password: "mdp", est_limite: "1",
-montant_limite: "200000", offre: "", details_offre: "cinq palettes de jus", engagement: "1", etat_signature: "1", date_signature: "20-08-2022",
-cni: "1", patente: "1", nui: "1", etat_validation: "1", date_validation: "20-08-2022", etat_stock: "1", date_expedition: "20-08-2022", 
-adresse: "Douala", precompte: "1", ristourne: "1"};
+ var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: 0,
+montant_limite: 0, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
+cni: 0, patente: 0, nui: 0, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
+adresse: adresse, precompte: precompte, ristourne: ristourne};
   console.log(data);
 
   $.post("http://localhost:5000/user/new", data, function(puerto){
