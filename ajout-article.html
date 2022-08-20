@@ -443,7 +443,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Quantite</th>
-                    <th scope="col">Prix Unitaire</th>
+                    <th scope="col">Date</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -451,7 +451,7 @@
                     <th scope="row">1</th>
                     <td>Malta</td>
                     <td>100</td>
-                    <td>500</td>
+                    <td>20-08-2022</td>
                      <td>
                           <ul class="list-inline m-0">
                           
@@ -539,12 +539,16 @@
                   <input type="number" name="quantite" class="form-control" id="yourQuantite" required>
                   <div class="invalid-feedback">Quantité obligatioire!</div>
                 </div>
-          
-                         
+                
                 <div class="col-12">
-                  <label for="yourDate" class="form-label">Prix unitaire de l'article</label>
+                  <label for="prix" class="form-label">Prix HT  </label>
+                  <input type="number" name="prix" class="form-control" id="prix" required>
+                  <div class="invalid-feedback">prix hors taxe obligatioire!</div>
+                </div>         
+                <div class="col-12">
+                  <label for="yourDate" class="form-label">Date</label>
                   <input type="date" name="Date" class="form-control" id="yourDate" required>
-                  <div class="invalid-feedback">prix unitaire du produit obigatoire!</div>
+                  <div class="invalid-feedback">date d'ajout du produit obigatoire!</div>
                 </div>
                
               </form>

@@ -439,116 +439,36 @@
               <!-- Table with stripped rows -->
               <div class="table-responsive">
                 <table class="table">
-                  <table class="table datatable">
-                <thead class="table-head">
-                  <tr>
-                    <th scope="col w-auto">#</th>
-                    <th scope="col w-auto">Vendeur</th>
-                    <th scope="col w-auto">Client</th>
-                   
-                    <th scope="col">Code</th>
-                    <th scope="col">Offre</th>
-                      <th scope="col">Détails</th>
-                    <th scope="col">Engagement</th>
-                    <th scope="col">Date création</th>
-                    <th scope="col">Etat signature</th>
-                    <th scope="col">Date signature</th>
-                    <th scope="col">Identité</th>
-                    <th scope="col">Patente</th>
-                    <th scope="col">NUI</th>
-                    <th scope="col">Etat validation</th>
-                    <th scope="col">Date validation</th>
-                    <th scope="col">État stock</th>
-                    <th scope="col">Date expedition</th>
-                    <th scope="col">Adresse</th>
-                      <th scope="col">Options</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jean Luc</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>10</td>
-                    <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                    <td>Camerounaise</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                      <td>
-                          <ul class="list-inline m-0">
-                          
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutRevendeur" data-placement="top" title="Edit"
-                              style="margin-bottom: 10px; vertical-align: baseline;"
-                              ><i
-                                  class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                  class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                          <li class="list-inline-item">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#plusinfo" >Voire plus</button>
-                          </li>
-                          </ul>
-
-                      </td>
-                  </tr>
-                 
-                   <tr>
-                        <th scope="row">2</th>
-                        <td>Pierre</td>
-                        <td>Designer</td>
-                        <td>28</td>
-                        <td>6</td>
-                        <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                        <td>Camerounaise</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>
-                          <ul class="list-inline m-0">
-                      
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutRevendeur" data-placement="top" title="Edit"
-                                style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top"
-                                title="Delete"><i class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                            <li class="list-inline-item" data-toggle="modal" data-target="#plusinfo"  >
-                              <button type="button" class="btn btn-warning btn-sm">Voire plus</button>
-                            </li>
-                          </ul>
-                      
-                        </td>
+                  <table class="table datatable" id="list-revendeur">
+                    <thead class="table-head">
+                      <tr>
+                        <th scope="col w-auto">#</th>
+                        <th scope="col w-auto">Vendeur</th>
+                        <th scope="col w-auto">Client</th>
+                        <th scope="col w-auto">Email</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Offre</th>
+                        <th scope="col">Détails</th>
+                        <th scope="col">Engagement</th>
+                        <th scope="col">Date création</th>
+                        <th scope="col">Etat signature</th>
+                        <th scope="col">Date signature</th>
+                        <th scope="col">Identité</th>
+                        <th scope="col">Patente</th>
+                        <th scope="col">NUI</th>
+                        <th scope="col">Etat validation</th>
+                        <th scope="col">Date validation</th>
+                        <th scope="col">État stock</th>
+                        <th scope="col">Date expedition</th>
+                        <th scope="col">Adresse</th>
+                        <th scope="col">Options</th>
                       </tr>
-
-                 
-                </tbody>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
               </table>
-            </table>
-          </div>
+            </div>
               <!-- End Table with stripped rows -->
 
             </div>
@@ -683,93 +603,93 @@
     
           </div>
     
-          <form class="row g-3 needs-validation" novalidate>
+          <form class="row g-3 needs-validation" novalidate id="saveRevendeur">
             <div class="col-12">
-              <label for="yourClient" class="form-label">Vendeur</label>
-              <input type="text" name="client" class="form-control" id="vendeur">
-              <div class="invalid-feedback">Nom du vendeur obligatoire!</div>
-            </div>
-            <div class="col-12">
-              <label for="yourClient" class="form-label">Nom Revendeur</label>
-              <input type="text" name="client" class="form-control" id="yourClient" required>
+              <label for="vendeur" class="form-label">Nom Revendeur</label>
+              <input type="text" name="vendeur" class="form-control" id="vendeur">
               <div class="invalid-feedback">Nom du client obligatoire!</div>
             </div>
             <div class="col-12">
-              <label for="yourSuffixe" class="form-label">Suffixe Login</label>
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Nom du client obligatoire!</div>
+            </div>
+            <div class="col-12">
+              <label for="suffixe" class="form-label">Suffixe Login</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" name="suffixe" class="form-control" id="yourSuffixe" required>
+                <input type="text" name="suffixe" class="form-control" id="suffixe" required>
                 <div class="invalid-feedback">Please choose a usersuffixe.</div>
               </div>
             </div>
             <div class="col-12">
-                <label for="yourOffre" class="form-label">Offre</label>
-                <input type="text" name="offre" class="form-control" id="yourOffre" required>
+                <label for="offre" class="form-label">Offre</label>
+                <input type="text" name="offre" class="form-control" id="offre" required>
                 <div class="invalid-feedback">Offre obligatoire!</div>
               </div>
               <div class="col-12">
-                <label for="yourOffre" class="form-label">Détails Offre</label>
-                <input type="text" name="name" class="form-control" id="yourOffre" required>
+                <label for="details" class="form-label">Détails Offre</label>
+                <input type="text" name="details" class="form-control" id="details" required>
                 <div class="invalid-feedback">Détails offre obligatoire!</div>
               </div>
               <div class="col-12">
-                <label for="yourEngagement" class="form-label">Engagement</label>
-                <input type="text" name="engagement" class="form-control" id="yourEngagement" required>
+                <label for="engagement" class="form-label">Engagement</label>
+                <input type="text" name="engagement" class="form-control" id="engagement" required>
                 <div class="invalid-feedback">Engagements obligatoire!</div>
               </div>
               <div class="col-12">
-                <label for="yourDate" class="form-label">Date Création</label>
-                <input type="date" name="date" class="form-control" id="yourDate" required>
+                <label for="date" class="form-label">Date Création</label>
+                <input type="date" name="date" class="form-control" id="date" required>
                 <div class="invalid-feedback">Date de création obligatoire!</div>
               </div> 
               <div class="col-12">
-                <label for="yourEtat" class="form-label">Etat Signature</label>
-                <input type="number" name="etat" class="form-control" id="yourEtat" required>
+                <label for="etat" class="form-label">Etat Signature</label>
+                <input type="number" name="etat" class="form-control" id="etat" required>
                 <div class="invalid-feedback">Etat de signature obligatoire!</div>
               </div>   
               <div class="col-12">
-                <label for="yourDateSignature" class="form-label">Date Signature</label>
-                <input type="date" name="datesignature" class="form-control" id="yourDateSignature" required>
+                <label for="dateSignature" class="form-label">Date Signature</label>
+                <input type="date" name="datesignature" class="form-control" id="dateSignature" required>
                 <div class="invalid-feedback">Date de signature obligatoire!</div>
               </div>      
               <div class="col-12">
-                <label for="yourImage" class="form-label">Insérer CNI</label>
-                <input type="file" name="image" class="form-control" id="yourImage" >
+                <label for="cni" class="form-label">Insérer CNI</label>
+                <input type="file" name="cni" class="form-control" id="cni" >
                 <div class="invalid-feedback">identité obligatoire!</div>
               </div>
               <div class="col-12">
-                <label for="yourImage" class="form-label">Insérer Patente</label>
-                <input type="file" name="image" class="form-control" id="yourImage" required>
+                <label for="patente" class="form-label">Insérer Patente</label>
+                <input type="file" name="patente" class="form-control" id="patente" required>
                 <div class="invalid-feedback">patente obligatoire!</div>
               </div>  
               <div class="col-12">
-                <label for="yourImage" class="form-label">Insérer NUI</label>
-                <input type="file" name="image" class="form-control" id="yourImage" required>
+                <label for="nui" class="form-label">Insérer NUI</label>
+                <input type="file" name="nui" class="form-control" id="nui" required>
                 <div class="invalid-feedback">patente obligatoire!</div>
               </div>
               <div class="col-12">
-                <label for="yourEtatValidation" class="form-label">Etat Validattion</label>
-                <input type="number" name="etatvalidation" class="form-control" id="yourEtatValidation" required>
+                <label for="etatValidation" class="form-label">Etat Validattion</label>
+                <input type="number" name="etatvalidation" class="form-control" id="etatValidation" required>
                 <div class="invalid-feedback">Etat de validation obligatoire!</div>
               </div> 
               <div class="col-12">
-                <label for="yourDateValidation" class="form-label">Date Validation</label>
-                <input type="date" name="datevalidation" class="form-control" id="yourDateValidation" required>
+                <label for="dateValidation" class="form-label">Date Validation</label>
+                <input type="date" name="datevalidation" class="form-control" id="dateValidation" required>
                 <div class="invalid-feedback">Date de validation obligatoire!</div>
               </div>    
               <div class="col-12">
-                <label for="yourEtatStock" class="form-label">Etat Stock</label>
-                <input type="number" name="etatstock" class="form-control" id="yourEtatStock" required>
+                <label for="etatStock" class="form-label">Etat Stock</label>
+                <input type="number" name="etatstock" class="form-control" id="etatStock" required>
                 <div class="invalid-feedback">Etat du stock obligatoire!</div>
               </div>   
               <div class="col-12">
-                <label for="yourDateExpedition" class="form-label">Date Expedition</label>
-                <input type="date" name="dateexpedition" class="form-control" id="yourExpedition" required>
+                <label for="dateExpedition" class="form-label">Date Expedition</label>
+                <input type="date" name="dateexpedition" class="form-control" id="dateExpedition" required>
                 <div class="invalid-feedback">Date de l'expedition obligatoire!</div>
               </div> 
               <div class="col-12">
-                <label for="yourAdresse" class="form-label">Adresse</label>
-                <input type="text" name="adresse" class="form-control" id="yourAdresse" required>
+                <label for="Adresse" class="form-label">Adresse</label>
+                <input type="text" name="adresse" class="form-control" id="Adresse" required>
                 <div class="invalid-feedback">Adresse obligatoire!</div>
               </div>           
             <div class="col-12">
@@ -826,7 +746,7 @@
   <!-- jquery  JS Files -->
 
     
-    <script src="fonctions.js"></script>
+    
     <script src="assets/vendor/jquery/jquery.min.js"></script>
       <script src="assets/vendor/jquery/jquery.livequery.js"></script>
      
@@ -836,7 +756,7 @@
       <script src="assets/js/main.js"></script>
   <script src="assets/js/custum.js"></script>
 
-
+  <script src="assets/js/fonctions.js"></script>
 </body>
 
 </html>
