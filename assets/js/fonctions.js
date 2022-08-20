@@ -1,5 +1,7 @@
 const path = "http://localhost:5000";
 
+//fonction pour enregistrer un article
+
 // fonction pour enregister un revendeur
 $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
     var client = document.getElementById("client").value;
@@ -25,7 +27,7 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var adresse = document.getElementById("Adresse").value;
     var formData = new FormData();
     formData.append('parrain', "0");
-    formData.append('id_role', "0");
+    formData.append('id_role', "1");
     formData.append('nom_user', client);
     formData.append('login', code);
     formData.append('email', email);
@@ -47,12 +49,21 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     formData.append('etat_stock', etat_stock);
     formData.append('date_expedition', date_expedition);
     formData.append('adresse', adresse);
+
     formData.append('precompte', precompte);
     formData.append('ristourne', ristourne);
-    for (var pair of formData.entries()) {
+    /* for (var pair of formData.entries()) {
         console.log(pair[0]+ ', ' + pair[1]); 
-    }
+    } */
   /*  $.ajax({
+
+    formData.append('precompte', "2%");
+    formData.append('ristourne', "5%");
+   // for (var pair of formData.entries()) {
+        //console.log(pair[0]+ ', ' + pair[1]); 
+    //}
+    /*$.ajax({
+
         url: "http://localhost:5000/user/new",
         data: formData,
         processData: false,
@@ -62,14 +73,22 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
             alert(data);
         }
     });*/
+
     var data  = {email: "test@gmail.com", telephone: "6555"};
   
+ var data  = {parrain: "1", id_role: "1", nom_user: client, email: "cab@gmail.com", login: "suffixe" , telephone: "phone", password: "mdp", est_limite: "1",
+montant_limite: "200000", offre: "", details_offre: "cinq palettes de jus", engagement: "1", etat_signature: "1", date_signature: "20-08-2022",
+cni: "1", patente: "1", nui: "1", etat_validation: "1", date_validation: "20-08-2022", etat_stock: "1", date_expedition: "20-08-2022", 
+adresse: "Douala", precompte: "1", ristourne: "1"};
+  console.log(data);
+
   $.post("http://localhost:5000/user/new", data, function(puerto){
 
    console.log(puerto) ;
   }, 'json');
 
   return false;
+
 });
 
 
