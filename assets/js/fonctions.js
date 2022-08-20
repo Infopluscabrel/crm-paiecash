@@ -1,11 +1,15 @@
 const path = "http://localhost:5000";
 
 // fonction pour enregister un revendeur
-$('#saveRevendeur').livequery('submit',   function(){
+$('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
     var client = document.getElementById("client").value;
     var email = document.getElementById("email").value;
     var code = document.getElementById("suffixe").value;
+    var telephone = document.getElementById("phone").value;
+    var mot_de_passe = document.getElementById("mdp").value;
     var offre = document.getElementById("offre").value;
+    var precompte = document.getElementById("precompte").value;
+    var ristourne = document.getElementById("ristourne").value;
     var details = document.getElementById("details").value;
     var engagement = document.getElementById("engagement").value;
     var date_creation = document.getElementById("date").value;
@@ -19,24 +23,32 @@ $('#saveRevendeur').livequery('submit',   function(){
     var etat_stock = document.getElementById("etatStock").value;
     var date_expedition = document.getElementById("dateExpedition").value;
     var adresse = document.getElementById("Adresse").value;
-    var formData = new FormData(this);
-    formData.append('client', client);
+    var formData = new FormData();
+    formData.append('parrain', "0");
+    formData.append('id_role', "0");
+    formData.append('nom_user', client);
+    formData.append('login', code);
     formData.append('email', email);
-    formData.append('suffixe', code);
+    formData.append('telephone', telephone);
+    formData.append('password', mot_de_passe);
+    formData.append('est_limite', "0");
+    formData.append('montant_limite', "0"); 
     formData.append('offre', offre);
-    formData.append('details', details);
+    formData.append('details_offre', details);
     formData.append('engagement', engagement);
-    formData.append('date', date_creation);
-    formData.append('etat', etat_signature);
-    formData.append('datesignature', date_signature);
-    /*formData.append('cni', cni);
-    formData.append('patente', patente);
-    formData.append('nui', nui);*/
-    formData.append('etatvalidation', etat_validation);
-    formData.append('datevalidation', date_validation);
-    formData.append('etatstock', etat_stock);
-    formData.append('dateexpedition', date_expedition);
+    //formData.append('date_creation', date_creation);
+    formData.append('etat_signature', etat_signature);
+    formData.append('date_signature', date_signature);
+    formData.append('cni', "0");
+    formData.append('patente', "0");
+    formData.append('nui', "0");
+    formData.append('etat_validation', etat_validation);
+    formData.append('date_validation', date_validation);
+    formData.append('etat_stock', etat_stock);
+    formData.append('date_expedition', date_expedition);
     formData.append('adresse', adresse);
+    formData.append('precompte', precompte);
+    formData.append('ristourne', ristourne);
     for (var pair of formData.entries()) {
         console.log(pair[0]+ ', ' + pair[1]); 
     }
@@ -91,6 +103,8 @@ function show(data) {
         <th>Email</th>
         <th>Code</th>
         <th>Offre</th>
+        <th scope="col">Précompte</th>
+        <th scope="col">Ristourne</th>
         <th>Détails</th>
         <th>Engagement</th>
         <th>Date création</th>
@@ -116,6 +130,8 @@ function show(data) {
 	<td>${r.EMAIL}</td>
 	<td>${r.LOGIN} </td>
     <td>${r.offre} </td>
+    <td>${r.precompte} </td>
+    <td>${r.ristourne} </td>
     <td>${r.details_offre} </td>
     <td>${r.engagement} </td>
     <td>${r.CREATED_AT} </td>
