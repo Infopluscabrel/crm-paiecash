@@ -1,6 +1,27 @@
 const path = "http://localhost:5000";
 
-//fonction pour enregistrer un article
+//fonction de connexion de l'utilisateur
+/*$('#userLogin').livequery('submit',   function(e){ e.preventDefault() ; 
+  var codeLogin = document.getElementById("yourUsername").value;
+  var mot_de_passe = document.getElementById("yourPassword").value;
+  var formData = new FormData();
+  formData.append('email', codeLogin);
+  formData.append('password', mot_de_passe);
+     
+  if (email=codeLogin && password = mot_de_passe ){
+
+  };
+
+  console.log(data);
+
+  $.post("http://localhost:5000/user/login", data, function(puerto){
+
+   console.log(puerto) ;
+  }, 'json');
+
+  return ("indexe.html");
+
+});*/
 
 // fonction pour enregister un revendeur
 $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
@@ -76,10 +97,10 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
 
     var data  = {email: "test@gmail.com", telephone: "6555"};
   
- var data  = {parrain: "1", id_role: "1", nom_user: client, email: "cab@gmail.com", login: "suffixe" , telephone: "phone", password: "mdp", est_limite: "1",
-montant_limite: "200000", offre: "", details_offre: "cinq palettes de jus", engagement: "1", etat_signature: "1", date_signature: "20-08-2022",
-cni: "1", patente: "1", nui: "1", etat_validation: "1", date_validation: "20-08-2022", etat_stock: "1", date_expedition: "20-08-2022", 
-adresse: "Douala", precompte: "1", ristourne: "1"};
+ var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: 0,
+  montant_limite: 0, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
+  cni: 0, patente: 0, nui: 0, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
+  adresse: adresse, precompte: precompte, ristourne: ristourne};
   console.log(data);
 
   $.post("http://localhost:5000/user/new", data, function(puerto){
@@ -91,14 +112,10 @@ adresse: "Douala", precompte: "1", ristourne: "1"};
 
 });
 
-
-
- 
 //fonction pour recupérer la liste des revendeurs.
 // api url
-const api_url =
-	"http://localhost:5000/user/all";
 
+const api_url = "http://localhost:5000/user/all";
 // Defining async function
 async function getapi(url) {
 	
@@ -128,7 +145,7 @@ function show(data) {
 	let tab =
 		`<tr>
         <th>#</th>
-		<th>Vendeur</th>
+		    <th>Vendeur</th>
         <th>Client</th>
         <th>Email</th>
         <th>Code</th>
@@ -157,7 +174,7 @@ function show(data) {
     <td>${r.ID_USER} </td> 
     <td>SABC</td>   
 	<td>${r.NOM_USER} </td>
-	<td>${r.EMAIL}</td>
+	<td>${r.EMAIL}</td>s
 	<td>${r.LOGIN} </td>
     <td>${r.offre} </td>
     <td>${r.precompte} </td>
