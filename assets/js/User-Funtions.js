@@ -1,5 +1,28 @@
 const path = "http://localhost:5000";
 
+//fonction de connexion de l'utilisateur
+/*$('#userLogin').livequery('submit',   function(e){ e.preventDefault() ; 
+  var codeLogin = document.getElementById("yourUsername").value;
+  var mot_de_passe = document.getElementById("yourPassword").value;
+  var formData = new FormData();
+  formData.append('email', codeLogin);
+  formData.append('password', mot_de_passe);
+     
+  if (email=codeLogin && password = mot_de_passe ){
+
+  };
+
+  console.log(data);
+
+  $.post("http://localhost:5000/user/login", data, function(puerto){
+
+   console.log(puerto) ;
+  }, 'json');
+
+  return ("indexe.html");
+
+});*/
+
 // fonction pour enregister un revendeur
 $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
     var client = document.getElementById("client").value;
@@ -75,9 +98,9 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var data  = {email: "test@gmail.com", telephone: "6555"};
   
  var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: 0,
-montant_limite: 0, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
-cni: 0, patente: 0, nui: 0, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
-adresse: adresse, precompte: precompte, ristourne: ristourne};
+  montant_limite: 0, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
+  cni: 0, patente: 0, nui: 0, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
+  adresse: adresse, precompte: precompte, ristourne: ristourne};
   console.log(data);
 
   $.post("http://localhost:5000/user/new", data, function(puerto){
@@ -122,7 +145,7 @@ function show(data) {
 	let tab =
 		`<tr>
         <th>#</th>
-		<th>Vendeur</th>
+		    <th>Vendeur</th>
         <th>Client</th>
         <th>Email</th>
         <th>Code</th>

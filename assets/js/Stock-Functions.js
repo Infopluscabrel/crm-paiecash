@@ -1,10 +1,57 @@
 const path = "http://localhost:5000";
 
-//fonction pour enregistrer un article
-$('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ; 
+//function pour remplir le select option
+const selectArticle_url =
+	"http://localhost:5000/article/all";
+
+// Defining async function
+async function getapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		hideloader();
+	}
+	show(data);
+}
+// Calling that async function
+getapi(selectArticle_url);
+
+// Function to hide the loader
+function hideloader() {
+	
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+    console.log(data);
+
+    
+	let select =
+		`<option>
+    selectionnez le nom de l'article
+    </option>`;
+	
+	// Loop to access name row
+	 for (let r of data.data) {
+		select += `<option>      
+	    ${r.NOM_PRODUIT}    
+    </option>`;
+	}
+  
+	// Setting innerHTML as select variable
+	document.getElementById("entree").innerHTML = select;
+}
+
+
+//fonction pour enregistrer un stock
+$('#saveStock').livequery('submit',   function(e){ e.preventDefault() ; 
     var nom = document.getElementById("nom").value;
     var quantite = document.getElementById("quantite").value;
-    var prix = document.getElementById("prix-article").value;
+    
     var formData = new FormData();
     formData.append('nom', nom);
     formData.append('prix', prix);
@@ -12,10 +59,10 @@ $('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ;
     formData.append('proprietaire', "1");
     
   
- var data  = {nom: nom, prix: prix, quantite: quantite, proprietaire: "1"};
+ var data  = {nom: nom, quantite: quantite};
   console.log(data);
 
-  $.post("http://localhost:5000/article/new", data, function(puerto){
+  $.post("http://localhost:5000/article/update", data, function(puerto){
 
    console.log(puerto) ;
   }, 'json');
@@ -24,13 +71,7 @@ $('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ;
 
 });
 
-
-  
-//fonction pour update un article
-
-
-//fonction pour lister les article
-// api url
+//fonctionpour lister tout les articles en stock
 const getArticle_url =
 	"http://localhost:5000/article/all";
 
@@ -95,5 +136,5 @@ function show(data) {
 	}
   
 	// Setting innerHTML as tab variable
-	document.getElementById("list-article").innerHTML = tab;
+	document.getElementById("stock").innerHTML = tab;
 }
