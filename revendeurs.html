@@ -407,12 +407,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Gestion du reseau</h1>
+      <h1>Costum Relation Management</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Gestion du Reseau</li>
-          <li class="breadcrumb-item active">Les revendeurs</li>
+          <li class="breadcrumb-item">CRM</li>
+          <li class="breadcrumb-item active">Les Grossistes</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -423,9 +423,9 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Liste des Revendeurs  
+              <h5 class="card-title">Liste des Grossistes  
                
-                <button type="" class="btn btn-primary" id="nouveauRevendeur"  data-toggle="modal" data-target="#ajoutRevendeur">Ajouter Revendeur</button>
+                <button type="" class="btn btn-primary" id="nouveauRevendeur"  data-toggle="modal" data-target="#ajoutRevendeur">Ajouter Grossiste</button>
             
               </h5>
               <p></p>
@@ -475,9 +475,8 @@
     </section>
 
 
-    <!-- modal ajout joueur -->
-<div class="modal fade show" id="ajoutRevendeurlast" tabindex="-1" role="dialog" aria-labelledby="ajoutRevendeur"
-  aria-hidden="true">
+    <!-- modal editer revendeurr -->
+<div class="modal fade" id="editerRevendeur" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -486,56 +485,148 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Ajouter un Revendeur</h5>
-          
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="card mb-3">
+        
+            <div class="card-body">
+        
+              <div class="pt-4 pb-2">
+                <h5 class="card-title text-center pb-0 fs-4">Modifier Grossiste</h5>
+        
               </div>
-          
-              <form class="row g-3 needs-validation" novalidate>
+        
+              <form class="row g-3 needs-validation" novalidate id="saveRevendeur">
                 <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Suffixe Login</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Suffixe du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Client</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
+                  <label for="client" class="form-label">Nom Revendeur</label>
+                  <input type="text" name="client" class="form-control" id="client">
                   <div class="invalid-feedback">Nom du client obligatoire!</div>
                 </div>
                 <div class="col-12">
-                  <label for="yourEmail" class="form-label">Votre Email</label>
-                  <input type="email" name="email" class="form-control" id="yourEmail" required>
-                  <div class="invalid-feedback">Email obligatioire!</div>
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" id="email" required>
+                  <div class="invalid-feedback">Nom du client obligatoire!</div>
                 </div>
-          
                 <div class="col-12">
-                  <label for="yourUsername" class="form-label">Le poste du joueur</label>
-                 
-                   
-                    <input type="text" name="username" class="form-control" id="yourUsername" required>
-                    <div class="invalid-feedback">poste principale du joueur.</div>
+                  <label for="suffixe" class="form-label">Suffixe Login</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="text" name="suffixe" class="form-control" id="suffixe" required>
+                    <div class="invalid-feedback">Please choose a usersuffixe.</div>
                   </div>
                 </div>
-          
                 <div class="col-12">
-                  <label for="yourPassword" class="form-label">Date de naissance</label>
-                  <input type="text" name="password" class="form-control" id="yourPassword" required>
-                  <div class="invalid-feedback">date de naissance du joueur!</div>
+                  <label for="phone" class="form-label">Télephone</label>
+                  <input type="number" name="phone" class="form-control" id="phone" required>
+                  <div class="invalid-feedback">Nom du client obligatoire!</div>
                 </div>
-               
+                <div class="col-12">
+                  <label for="mdp" class="form-label">Mot de passe</label>
+                  <input type="password" name="mdp" class="form-control" id="mdp" required>
+                  <div class="invalid-feedback">Nom du client obligatoire!</div>
+                </div>
+                <div class="col-12">
+                    <label for="Est-Limite" class="form-label">Est Limite</label>
+                    <input type="text" name="EstLimite" class="form-control" id="EstLimite" required>
+                    <div class="invalid-feedback">Offre obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="montant-limite" class="form-label">Montant Limite</label>
+                    <input type="number" name="MontantLimite" class="form-control" id="MontantLimite" required>
+                    <div class="invalid-feedback">Offre obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="offre" class="form-label">Offre</label>
+                    <input type="text" name="offre" class="form-control" id="offre" required>
+                    <div class="invalid-feedback">Offre obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="precompte" class="form-label">Précompte</label>
+                    <input type="text" name="precompte" class="form-control" id="precompte" >
+                    <div class="invalid-feedback">Quel est le précompte du revendeur</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="ristourne" class="form-label">Ristourne</label>
+                    <input type="text" name="ristourne" class="form-control" id="ristourne" >
+                    <div class="invalid-feedback">Avez vous une ristourne?</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="details" class="form-label">Détails Offre</label>
+                    <input type="text" name="details" class="form-control" id="details" required>
+                    <div class="invalid-feedback">Détails offre obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="engagement" class="form-label">Engagement</label>
+                    <input type="text" name="engagement" class="form-control" id="engagement" required>
+                    <div class="invalid-feedback">Engagements obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="date" class="form-label">Date Création</label>
+                    <input type="date" name="date" class="form-control" id="date" required>
+                    <div class="invalid-feedback">Date de création obligatoire!</div>
+                  </div> 
+                  <div class="col-12">
+                    <label for="etat" class="form-label">Etat Signature</label>
+                    <input type="number" name="etat" class="form-control" id="etat" required>
+                    <div class="invalid-feedback">Etat de signature obligatoire!</div>
+                  </div>   
+                  <div class="col-12">
+                    <label for="dateSignature" class="form-label">Date Signature</label>
+                    <input type="date" name="datesignature" class="form-control" id="dateSignature" required>
+                    <div class="invalid-feedback">Date de signature obligatoire!</div>
+                  </div>      
+                  <div class="col-12">
+                    <label for="cni" class="form-label">Numéro CNI</label>
+                    <input type="number" name="cni" class="form-control" id="cni" >
+                    <div class="invalid-feedback">identité obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="patente" class="form-label">Numéro Patente</label>
+                    <input type="number" name="patente" class="form-control" id="patente" >
+                    <div class="invalid-feedback">patente obligatoire!</div>
+                  </div>  
+                  <div class="col-12">
+                    <label for="nui" class="form-label">Numéro NUI</label>
+                    <input type="number" name="nui" class="form-control" id="nui">
+                    <div class="invalid-feedback">patente obligatoire!</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="etatValidation" class="form-label">Etat Validattion</label>
+                    <input type="number" name="etatvalidation" class="form-control" id="etatValidation" required>
+                    <div class="invalid-feedback">Etat de validation obligatoire!</div>
+                  </div> 
+                  <div class="col-12">
+                    <label for="dateValidation" class="form-label">Date Validation</label>
+                    <input type="date" name="datevalidation" class="form-control" id="dateValidation" required>
+                    <div class="invalid-feedback">Date de validation obligatoire!</div>
+                  </div>    
+                  <div class="col-12">
+                    <label for="etatStock" class="form-label">Etat Stock</label>
+                    <input type="number" name="etatstock" class="form-control" id="etatStock" required>
+                    <div class="invalid-feedback">Etat du stock obligatoire!</div>
+                  </div>   
+                  <div class="col-12">
+                    <label for="dateExpedition" class="form-label">Date Expedition</label>
+                    <input type="date" name="dateexpedition" class="form-control" id="dateExpedition" required>
+                    <div class="invalid-feedback">Date de l'expedition obligatoire!</div>
+                  </div> 
+                  <div class="col-12">
+                    <label for="Adresse" class="form-label">Adresse</label>
+                    <input type="text" name="adresse" class="form-control" id="Adresse" required>
+                    <div class="invalid-feedback">Adresse obligatoire!</div>
+                  </div>           
+                <div class="col-12">
+                  <button class="btn btn-primary w-100" type="submit">Modifier</button>
+                </div>
               </form>
-          
-           
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
-      </div>
+        
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>     
     </div>
   </div>
 </div>
@@ -595,7 +686,7 @@
         <div class="card-body">
     
           <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Modifier Revendeur</h5>
+            <h5 class="card-title text-center pb-0 fs-4">Ajouter Grossiste</h5>
     
           </div>
     
@@ -719,7 +810,7 @@
                 <div class="invalid-feedback">Adresse obligatoire!</div>
               </div>           
             <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Modifier</button>
+              <button class="btn btn-primary w-100" type="submit">Ajouter</button>
             </div>
           </form>
     

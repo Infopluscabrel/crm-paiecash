@@ -457,58 +457,69 @@
     </section>
 
 
-    <!-- modal ajout stock-->
-<div class="modal fade show" id="entreeStocklast" tabindex="-1" role="dialog" aria-labelledby="entreeStock"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
+    <!-- modal editer stock-->
+    <div class="modal fade" id="editerStock" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Distributeur Paiecash</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Modifier un Stock</h5>
-          
-              </div>
-          
-              <form class="row g-3 needs-validation" novalidate>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du stock obligatoire!</div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourQuantite" class="form-label">La Quantite</label>
-                  <input type="number" name="quantite" class="form-control" id="yourQuantite" required>
-                  <div class="invalid-feedback">Quantité obligatioire!</div>
-                </div>
-          
-                         
-                <div class="col-12">
-                  <label for="prix" class="form-label"> Prix </label>
-                  <input type="number" name="prix" class="form-control" id="prix" required>
-                  <div class="invalid-feedback">date de naissance du joueur!</div>
-                </div>
-                <div class="col-12">
-                  <label for="Date" class="form-label">Date </label>
-                  <input type="date" name="Date" class="form-control" id="Date" required>
-                  <div class="invalid-feedback">date de naissance du joueur!</div>
-                </div>
-              </form>
-          
-           
-      
+      <div class="modal-body">
+    <div class="modal-body">
+      <div class="card mb-3">
+    
+        <div class="card-body">
+    
+          <div class="pt-4 pb-2">
+            <h5 class="card-title text-center pb-0 fs-4">Modifier une entrée en stock</h5>
+    
+          </div>
+    
+          <form class="row g-3 needs-validation" novalidate id="saveStock">
+            <div class="select">
+              <label for="nom" class="form-label">Nom de l'article</label>
+              <select name="article_id" class="form-control" id="entree" onclick="" >
+                  <option value="0">Sélectionnez le nom de l'article </option>
+
+              </select>    
+
+             
+                          
+               
+            </div>
+    
+            <div class="col-12">
+              <label for="yourEmail" class="form-label">Quantité</label>
+              <input type="number" name="quantite" class="form-control" id="yourEmail" required>
+              <div class="invalid-feedback">Please enter a valid Quantity it is a number!</div>
+            </div>
+    
+            <div class="col-12">
+              <button class="btn btn-primary w-100" type="submit">Modifier </button>
+            </div>
+            
+          </form>
+    
+        </div>
+      </div>
+    </div>
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
       </div>
     </div>
   </div>
 </div>
 
+
+    </div>
+  </div>
+</div>
 <!-- End modal -->
 
     <!-- modal plus d'informations du stock -->
@@ -548,7 +559,7 @@
   </main><!-- End #main -->
 
 
-<!-- Modal -->
+<!-- Modal ajouter entree stock-->
 <div class="modal fade" id="entreeStock" tabindex="-1" role="dialog"
   aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">

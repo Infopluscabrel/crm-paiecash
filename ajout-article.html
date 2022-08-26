@@ -456,60 +456,65 @@
       </div>
     </section>
 
-
-    <!-- modal ajout stock-->
-<div class="modal fade show" id="ajoutArticlelast" tabindex="-1" role="dialog" aria-labelledby="ajoutArticle"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Distributeur Paiecash</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Modifier une Entrée</h5>
+    <!-- Modal -->
+<div class="modal fade" id="editerArticle" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+  <div class="modal-body">
+    <div class="card mb-3">
+  
+      <div class="card-body">
+  
+        <div class="pt-4 pb-2">
+          <h5 class="card-title text-center pb-0 fs-4">Modifierr un Article</h5>
+  
+        </div>
+  
+        <form class="row g-3 needs-validation" novalidate id="saveArticle">
+          <div class="col-12">
+            <label for="nom" class="form-label">Nom de l'article</label>
+            <input type="text" name="nom" class="form-control" id="nom" required>
+            <div class="invalid-feedback">Entrez le nom de l'article!</div>
+          </div>
+  
+          <div class="col-12">
+            <label for="quantite" class="form-label">Quantité</label>
+            <input type="number" name="quantite" class="form-control" id="quantite" required>
+            <div class="invalid-feedback">Entrez la quantité de l'article!</div>
+          </div>
+  
+          <div class="col-12">
+            <label for="prix" class="form-label">Prix HT</label>
+            <input type="number" name="prix" class="form-control" id="prix-article" required>
+            <div class="invalid-feedback">Entrez le prix unitaire du produit!</div>
+          </div>
           
-              </div>
+          <div class="col-12">
+            <button class="btn btn-primary w-100" type="submit">Modifier</button>
+            
+          </div>
           
-              <form class="row g-3 needs-validation" novalidate>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom de l'article obligatoire!</div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourQuantite" class="form-label">La Quantite</label>
-                  <input type="number" name="quantite" class="form-control" id="yourQuantite" required>
-                  <div class="invalid-feedback">Quantité obligatioire!</div>
-                </div>
-                
-                <div class="col-12">
-                  <label for="prix" class="form-label">Prix HT  </label>
-                  <input type="number" name="prix" class="form-control" id="prix" required>
-                  <div class="invalid-feedback">prix hors taxe obligatioire!</div>
-                </div>         
-                <div class="col-12">
-                  <label for="yourDate" class="form-label">Date</label>
-                  <input type="date" name="Date" class="form-control" id="yourDate" required>
-                  <div class="invalid-feedback">date d'ajout du produit obigatoire!</div>
-                </div>
-               
-              </form>
-          
-           
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
+        </form>
+  
       </div>
     </div>
   </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
 </div>
-
-<!-- End modal -->
+</div>
+    
 
     <!-- modal plus d'informations du joueur -->
     <div class="modal fade show" id="plusinfo" tabindex="-1" role="dialog" aria-labelledby="plusinfo"
