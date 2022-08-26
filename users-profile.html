@@ -289,15 +289,20 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="parametres.html">
+          <i class="bi bi-book"></i>
+          <span>Parametres généraux</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Gestion du Reseau</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>CRM</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="revendeurs.html">
-              <i class="bi bi-circle"></i><span>Les revendeurs</span>
+              <i class="bi bi-circle"></i><span>Les Grossistes</span>
             </a>
           </li>
           <li>
@@ -335,12 +340,12 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="ajout-article.html">
-              <i class="bi bi-circle"></i><span>Articles</span>
+              <i class="bi bi-circle"></i><span>Parametres des Articles</span>
             </a>
           </li>
           <li>
             <a href="stocks-list.html">
-              <i class="bi bi-circle"></i><span>Stocks</span>
+              <i class="bi bi-circle"></i><span>Parametres de Stock</span>
             </a>
           </li>
           <!-- <li>
@@ -489,7 +494,10 @@
                       
                       <div id="qrCode"></div>
                       <script>
-                        var value  ="https://demos.telerik.com/kendo-ui/dataviz/overview/index.html" ;                        $("#qrCode").kendoQRCode({
+                         var user =localStorage.getItem('user');
+                          console.log(JSON.parse(user)) ;
+                        var value  =JSON.parse(user).LOGIN;                 
+                              $("#qrCode").kendoQRCode({
                           value: value,
                           color: "#008000" , 
                            size: 173,
