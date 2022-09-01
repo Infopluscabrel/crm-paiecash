@@ -25,8 +25,10 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var etat_stock = document.getElementById("etatStock").value;
     var date_expedition = document.getElementById("dateExpedition").value;
     var adresse = document.getElementById("Adresse").value;
-        
- var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: estLimite,
+    var user = JSON.parse( localStorage.getItem('user'));
+    	console.log(user);
+    var parrain = user.ID_USER;  
+ var data  = {parrain: parrain, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: estLimite,
   montant_limite: montantLimite, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
   cni: cni, patente: patente, nui: nui, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
   adresse: adresse, precompte: precompte, ristourne: ristourne};
@@ -70,8 +72,11 @@ function hideloader() {
 function show(data) {
     console.log(data);
 
-    
-	let tab =
+    var user = JSON.parse( localStorage.getItem('user'));
+    	console.log(user);
+    var parrain; 
+    if(user_id == JSON.parse( localStorage.getItem('user')) && parrain == user.ID_USER ){
+	    let tab =
 		`<tr>
         <th>#</th>
 		    <th>Vendeur</th>
@@ -139,7 +144,9 @@ function show(data) {
 	}
   
 	// Setting innerHTML as tab variable
-	document.getElementById("list-revendeur").innerHTML = tab;
+	document.getElementById("list-revendeur").innerHTML = tab;} else{
+    alert("une donnée est érronnée ");
+  }
 }
 
 

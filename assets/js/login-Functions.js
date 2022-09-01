@@ -4,6 +4,7 @@ const path = "http://localhost:5000";
 $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ; 
   var codeLogin = $('#yourUsername').val();
   var mot_de_passe = $('#yourPassword').val() ;
+  
   var data = {
     login: codeLogin,
     password: mot_de_passe
@@ -11,7 +12,7 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
   
   console.log(data);
 
-  $.post("http://localhost:5000/user/login", data, function(puerto){
+  $.post("http://localhost:5000/user/login/distributeur", data, function(puerto){
     if (puerto.status==200){
       alert("connexion réussie");
       window.location.href="file:///C:/Users/dell/Desktop/distributeurDashboard/online/crm-paiecash/index.html";}
@@ -20,8 +21,7 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
     }  
    console.log(puerto.data[0]) ;
    isLoggedIn(puerto.data[0]);
-   
-  
+    
   }, 'json');
   
   return false;

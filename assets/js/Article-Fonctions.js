@@ -5,14 +5,12 @@ $('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ;
     var nom = document.getElementById("nom").value;
     var quantite = document.getElementById("quantite").value;
     var prix = document.getElementById("prix-article").value;
-    var formData = new FormData();
-    formData.append('nom', nom);
-    formData.append('prix', prix);
-    formData.append('quantite', quantite);
-    formData.append('proprietaire', "1");
-    
+    var user = JSON.parse( localStorage.getItem('user'));
+    console.log(user);
+    var user_id = user.ID_USER;
+        
   
- var data  = {nom: nom, prix: prix, quantite: quantite, proprietaire: "1"};
+ var data  = {nom: nom, prix: prix, quantite: quantite, proprietaire: user_id};
   console.log(data);
 
   $.post("http://localhost:5000/article/new", data, function(puerto){
@@ -41,8 +39,12 @@ async function getapi(url) {
 	const response = await fetch(url);
 	
 	// Storing data in form of JSON
+  var user = JSON.parse( localStorage.getItem('user'));
+  console.log(user);
+  var user_id = user.ID_USER;
 	var data = await response.json();
-	console.log(data);
+	console.log(data); 
+  console.log(user_id);
 	if (response) {
 		hideloader();
 	}
@@ -57,9 +59,9 @@ function hideloader() {
 }
 // Function to define innerHTML for HTML table
 function show(data) {
-    console.log(data);
-
     
+  if(user_id = JSON.parse( localStorage.getItem('user'))){
+    console.log(data);
 	let tab =
 		`<tr>
         <th>#</th>
@@ -96,4 +98,7 @@ function show(data) {
   
 	// Setting innerHTML as tab variable
 	document.getElementById("list-article").innerHTML = tab;
+} else{
+  
+}
 }
