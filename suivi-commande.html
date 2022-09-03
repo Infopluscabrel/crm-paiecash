@@ -61,58 +61,147 @@
           </a>
         </li><!-- End Search Icon-->
 
-        <li class="nav-item">
-          <a href="#">Type d'offre</a> 
-        </li>
-        
-        <li class="nav-item">
-          <a href="#">Vendeur</a> 
-        </li>
-        <br><br>
-        <li class="nav-item">
-          <a href="#">Champ libre</a> 
-        </li>
-        <br><br>
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-            <i class=""></i><span>Type date</span><i
-              class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-  
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Création </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Validation</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Signature</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Expedition</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Tables Nav -->
-        <li class="nav-item">
-          <a href="#">Date Min</a> 
-        </li>
+        <li class="nav-item dropdown">
 
-        <li class="nav-item">
-          <a href="#">Date Max</a> 
-        </li>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
 
-        
-        <li class="nav-item dropdown pe-3">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+              
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/default-avatar.png " alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
@@ -333,293 +422,31 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Liste des Commandes  
-               
-                <button type="" class="btn btn-primary" id="nouvellecommande"  data-toggle="modal" data-target="#ajoutcommande">Ajouter Commande</button>
-            
+                                          
               </h5>
               <p></p>
-
-              <!-- Table with stripped rows -->
-              <div class="table-responsive">
-                <table class="table">
-                  <table class="table datatable">
+              <table class="table datatable" id="stock">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nom produit</th>
-                    <th scope="col">designation</th>
+                    <th scope="col">Nom</th>
                     <th scope="col">Quantité</th>
-                    <th scope="col">Date commande</th>
-                    <th scope="col">Etat de signature</th>
-                    <th scope="col">Date de signature</th>
-                    <th scope="col">Etat validation</th>
-                    <th scope="col">Date de validation</th>
-                    <th scope="col">Adresse</th>
-                      <th scope="col">Options</th>
-                    
-                  </tr>
+                    <th scope="col">Date</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jean Luc</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>10</td>
-                    <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                    <td>Camerounaise</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    
-                    <td>
-                          <ul class="list-inline m-0">
-                          
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutcommande" data-placement="top" title="Edit"
-                              style="margin-bottom: 10px; vertical-align: baseline;"
-                              ><i
-                                  class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                  class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                          <li class="list-inline-item">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#plusinfo" >Voire plus</button>
-                          </li>
-                          </ul>
-
-                      </td>
-                  </tr>
-                 
-                   <tr>
-                        <th scope="row">2</th>
-                        <td>Pierre</td>
-                        <td>Designer</td>
-                        <td>28</td>
-                        <td>6</td>
-                        <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                        <td>Camerounaise</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        
-                        <td>
-                          <ul class="list-inline m-0">
-                      
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutcommande" data-placement="top" title="Edit"
-                                style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top"
-                                title="Delete"><i class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                            <li class="list-inline-item" data-toggle="modal" data-target="#plusinfo"  >
-                              <button type="button" class="btn btn-warning btn-sm">Voire plus</button>
-                            </li>
-                          </ul>
-                      
-                        </td>
-                      </tr>
-
-                 
+                                  
+                                   
                 </tbody>
               </table>
-            </table>
-          </div>
               <!-- End Table with stripped rows -->
-
             </div>
-          </div>
-
+          </div> 
         </div>
       </div>
     </section>
 
-
-    <!-- modal ajout commande -->
-<div class="modal fade show" id="ajoutcommandelast" tabindex="-1" role="dialog" aria-labelledby="ajoutcommande"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Ajouter une Vente</h5>
-          
-              </div>
-          
-              <form class="row g-3 needs-validation" novalidate>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Suffixe Login</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Suffixe du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Client</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du client obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourEmail" class="form-label">Votre Email</label>
-                  <input type="email" name="email" class="form-control" id="yourEmail" required>
-                  <div class="invalid-feedback">Email obligatioire!</div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourUsername" class="form-label">Le poste du joueur</label>
-                 
-                   
-                    <input type="text" name="username" class="form-control" id="yourUsername" required>
-                    <div class="invalid-feedback">poste principale du joueur.</div>
-                  </div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourPassword" class="form-label">Date de naissance</label>
-                  <input type="text" name="password" class="form-control" id="yourPassword" required>
-                  <div class="invalid-feedback">date de naissance du joueur!</div>
-                </div>
-               
-              </form>
-          
-           
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- End modal -->
-
-    <!-- modal plus d'informations du joueur -->
-    <div class="modal fade show" id="plusinfo" tabindex="-1" role="dialog" aria-labelledby="plusinfo"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div>
-                Nom du footBalleur : Jean Pierre 
-
-                Caracteristiques :  Joue des 2 pieds , bon attaquant
-
-                Pays d'origine : Cameroun 
-
-
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- End modal -->
-
-  </main><!-- End #main -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="ajoutcommande" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="modal-body">
-      <div class="card mb-3">
-    
-        <div class="card-body">
-    
-          <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Ajouter une Commande</h5>
-    
-          </div>
-          <div class="container">
-          <form id="SaveLigneCommande" class="savevente">
-            <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-  
-                <div class="card mb-3">
-                  <div class="d-flex justify-content-center py-4">
-                    <a href="index.html" class="logo d-flex align-items-center w-auto">
-                      <img src="assets/img/logo.png" alt="">
-                      <span class="d-none d-lg-block">Détaillant Paiecash</span>
-                    </a>
-                  </div>
-                  <div class="card-body">
-  
-                    <div class="select">
-                      <select name="article_id" class="form-control" id="entree">
-                          <option value="0">Sélectionnez le nom de l'article </option>
-        
-                      </select>  <br>
-                    
-  
-                      <div class="col-12">
-                        <label for="quantity" class="form-label">Quantité</label>
-                        <input type="number" name="quantitearticle" class="form-control" id="quantity" required>
-                        <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
-                      </div><br>
-  
-                      <div class="col-12">
-                        <label for="prix-unitaire" class="form-label">Prix Unitaire</label>
-                        <input readonly="readonly" name="prix-unitaire" class="form-control" id="prix_unitaire" value="" required>
-                        
-                      </div><br>
-                      <div class="col-12">
-                        <label for="prix-total" class="form-label">Prix Total</label>
-                        <input readonly="prix" name="prix-total" class="form-control" id="prix_total" value="0" required>
-                      </div>
-                      <br>
-                      <div class="col-12-sm-6">
-                        <div><a>
-                          <button class="btn btn-primary w-100" type="submit" id="AjouterProduit">Ajouter</button>
-                        </a></div><br>
-                        <div><a href="facture.html"> <button class="btn btn-primary w-100" id="ValiderCommande" type="submit">Valider</button></a></div>                              
-                      </div>
-                    
-                    </form></div>
-            </div>
-      </div>
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
+</main>
   <!-- Vendor JS Files -->
   <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script> -->
 

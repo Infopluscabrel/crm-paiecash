@@ -15,7 +15,7 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
   $.post("http://localhost:5000/user/login/distributeur", data, function(puerto){
     if (puerto.status==200){
       alert("connexion réussie");
-      window.location.href="file:///C:/Users/dell/Desktop/distributeurDashboard/online/crm-paiecash/index.html";}
+      window.location.href="accueil.html";}
     else {
       alert("Vous voulez accéder a un compte qui n'existe pas ");
     }  
