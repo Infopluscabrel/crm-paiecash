@@ -27,7 +27,7 @@ $('#saveArticle').livequery('submit',   function(e){ e.preventDefault() ;
 //fonction pour update un article
 
 
-//fonction pour lister les article
+//fonction pour lister les articles
 
 // Defining async function
 async function getapi() {
