@@ -7,9 +7,9 @@ async function getapi() {
 	var user = JSON.parse( localStorage.getItem('user'));
     console.log(user);
     var user_id = user.ID_USER;
-    var data  = {user_id: proprietaire};
+    var data  = {user_id: ""+user_id};
     
-	$.get("http://localhost:5000/vente/all/grossiste", data, function(puerto){
+	$.get("http://localhost:5000/vente/all/me", data, function(puerto){
     var user = JSON.parse( localStorage.getItem('user'));
     console.log(user);
     var user_id = user.ID_USER;
