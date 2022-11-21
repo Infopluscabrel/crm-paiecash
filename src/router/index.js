@@ -1,15 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
+import store from "../store";
+import { nextTick } from "vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'active',
   routes: [
     {
       path: "/",
       alias: '/home',
       name: "home",
-      redirect: { name: 'login' },
+      component: HomeView
     },
     {
       path: "/login",
@@ -18,5 +21,15 @@ const router = createRouter({
     },
   ],
 });
+
+router.beforeEach(async (to) => {
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('user');
+
+  if(authRequired && !loggedIn){
+    return '/login';
+  }
+})
 
 export default router;
